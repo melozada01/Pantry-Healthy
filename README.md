@@ -5,7 +5,7 @@
 # Joao Vitor Damata - 12302600
 # Gabriel Mota - 12300500
 # Joao Victor Chaves - 12301299
-# Guilherme Guerra - --------
+# Guilherme Guerra - 12300640
 
 # 3B1
 
