@@ -2,7 +2,7 @@
 
 # Rafael Melo - 12302252
 # Gustavo Armanelli - 12301370
-# Joao Vitor Damata - -------
+# Joao Vitor Damata - 12302600
 # Gabriel Mota - 12300500
 # Joao Victor Chaves - 12301299
 # Guilherme Guerra - --------
