@@ -4,7 +4,7 @@
 # Gustavo Armanelli - 12301370
 # Joao Vitor Damata - -------
 # Gabriel Mota - ------
-# Joao Victor Chaves - -----
+# Joao Victor Chaves - 12301299
 # Guilherme Guerra - --------
 
 # 3B1
