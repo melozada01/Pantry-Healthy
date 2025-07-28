@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</form>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="user-info">
+            <img src="https://via.placeholder.com/40" class="avatar" alt="Avatar">
+            <div>
+                <h2>Gabriel Mota</h2>
+                <p>Quero emagrecer</p> <!-- trocar para o que o usuario escolher-->
+            </div>
+        </div>
+        <button class="qr-btn"><i class="fa-solid fa-qrcode"></i></button>
+    </header>
+
+    <main class="dashboard">
+        <section class="stats">
+            <div class="weights">
+                <p><strong>80KG</strong> Peso Inicial</p>
+                <p><strong>68KG</strong> Peso Atual</p> <!-- trocar para informações q estiverem no banco de dados -->
+                <p><strong>70KG</strong> Meta de Peso</p>
+            </div>
+            <canvas id="weightChart" width="400" height="200"></canvas>
+            <div class="imc-info">
+                <p>IMC: <strong>23</strong></p>
+                <p>kcal/dia: <strong>1900</strong></p>
+            </div>
+            <button class="btn pdf-btn">📄 PDF</button>
+        </section>
+
+        <button class="btn plan-btn">Plano Pago</button>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i></a>
+        <a href="alimentos.html"><i class="fa-solid fa-apple-whole"></i></a>
+        <a href="dicas.html"><i class="fa-solid fa-lightbulb"></i></a>
+        <a href="chat.html"><i class="fa-solid fa-comments"></i></a>
+        <a href="perfil.html"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <script src="../java-script/tela-inicial.js"></script>
+</body>
+</html>
