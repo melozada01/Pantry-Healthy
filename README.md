@@ -1,12 +1,12 @@
 # Pantry-Healthy
-Despensa Saudável
-Rafael Melo - 12302252
-Gustavo Armanelli - 12301370
-João Vitor Damata - 12302600
-Gabriel Mota - 12300500
-João Victor Chaves - 12301299
-Guilherme Guerra - 12300640
-3B1
+#Despensa Saudável
+#Rafael Melo - 12302252
+#Gustavo Armanelli - 12301370
+#João Vitor Damata - 12302600
+#Gabriel Mota - 12300500
+#João Victor Chaves - 12301299
+#Guilherme Guerra - 12300640
+#3B1
 O sistema deve permitir o cadastro de usuários [x]
 
 O usuário deve conseguir visualizar um histórico de refeições e atividades físicas []
