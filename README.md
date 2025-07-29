@@ -9,13 +9,13 @@
 # 3B1
 O sistema deve permitir o cadastro de usuários [x]
 
-O usuário deve conseguir visualizar um histórico de refeições e atividades físicas []
+O usuário deve poder redefinir a senha [x]
 
 O sistema irá considerar os alimentos que você tem em casa e fará a receita mais atenta para o seu objetivo [x]
 
 O sistema terá uma função gamificada contando o seu progresso [x]
 
-O sistema deve oferecer um chat no Whatsapp com um bot para fazer uma dieta. []
+Deve ser possível exportar relatórios em PDF [x]
 
 O sistema deve permitir que o usuário preencha informações pessoais, como: nome, idade, sexo, peso, altura. objetivo (perda de peso, ganho de massa, manutenção de peso). Nível de atividade física [x]
 
@@ -23,6 +23,6 @@ O sistema deve calcular o IMC com base no peso e altura. [x]
 
 O sistema deve sugerir uma meta diária de calorias com base no perfil do usuário. [x]
 
-O sistema deve permitir que o usuário registre suas refeições. []
+O sistema pode oferecer planos pagos para conteúdos adicionais [x]
 
 O sistema deve permitir que o usuário informe restrição alimentar para ajustar as sugestões de receitas [x]
