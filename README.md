@@ -29,9 +29,14 @@ O sistema deve permitir que o usuário informe restrição alimentar para ajusta
 
 
 # Como rodar o projeto:
-Passo 1- clicar no botão começar e fazer seu cadastro //
+Passo 1- clicar no botão começar e fazer seu cadastro 
+
 Passo 2- Finalizar o cadastro preechendo os campos de acordo com você
-Passo 3- fazer o seu calculo de IMC e calorias diarias, se quiser baixar o PDF de seu relatório também é possibel
+
+Passo 3- fazer o seu calculo de IMC e calorias diarias, se quiser baixar o PDF de seu relatório também é possivel
+
 Passo 4- Adicionar alimentos, ver as dicas e falar com nosso nutricionista
+
 Passo 5- Olhar as configurações, caso queria também, olhar o seu perfil, edita-lo ou sair da conta
+
 FIM!
