@@ -27,6 +27,8 @@ O sistema pode oferecer planos pagos para conteúdos adicionais [x]
 
 O sistema deve permitir que o usuário informe restrição alimentar para ajustar as sugestões de receitas [x]
 
+O sistema deve enviar notificações de lembretes [x]
+
 
 # Como rodar o projeto:
 Passo 1- clicar no botão começar e fazer seu cadastro 
