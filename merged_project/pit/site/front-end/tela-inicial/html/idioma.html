@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="page_title">NutriBot - Assistente de Dieta</title>
+    <link rel="stylesheet" href="../css/idioma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-bar">
+        <h2 data-i18n="app_name">NutriBot</h2>
+        <div class="language-selector">
+            <div class="current-language" onclick="toggleLanguageDropdown()">
+                <span class="flag-icon" id="currentFlag">🇧🇷</span>
+                <span id="currentLang">Português</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="language-dropdown" id="languageDropdown">
+                <div class="language-option active" data-lang="pt" onclick="changeLanguage('pt')">
+                    <span class="flag-icon">🇧🇷</span>
+                    <span>Português</span>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+                <div class="language-option" data-lang="en" onclick="changeLanguage('en')">
+                    <span class="flag-icon">🇺🇸</span>
+                    <span>English</span>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+                <div class="language-option" data-lang="es" onclick="changeLanguage('es')">
+                    <span class="flag-icon">🇪🇸</span>
+                    <span>Español</span>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+                <div class="language-option" data-lang="fr" onclick="changeLanguage('fr')">
+                    <span class="flag-icon">🇫🇷</span>
+                    <span>Français</span>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+                <div class="language-option" data-lang="de" onclick="changeLanguage('de')">
+                    <span class="flag-icon">🇩🇪</span>
+                    <span>Deutsch</span>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-house"></i>
+                <span data-i18n="welcome_title">Bem-vindo ao NutriBot</span>
+            </div>
+            
+            <div class="info-card">
+                <h3>
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span data-i18n="about_title">Sobre o Aplicativo</span>
+                </h3>
+                <p data-i18n="about_description">
+                    Seu assistente pessoal de nutrição com suporte a múltiplos idiomas. Receba planos alimentares personalizados, calcule seu IMC e obtenha dicas de saúde.
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-icon">🥗</div>
+                    <div class="stat-value">500+</div>
+                    <div class="stat-label" data-i18n="stat_recipes">Receitas</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-value">10K+</div>
+                    <div class="stat-label" data-i18n="stat_users">Usuários</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-label" data-i18n="stat_languages">Idiomas</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-value">4.8</div>
+                    <div class="stat-label" data-i18n="stat_rating">Avaliação</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-rocket"></i>
+                <span data-i18n="quick_actions">Ações Rápidas</span>
+            </div>
+            
+            <button class="btn" onclick="showNotification('feature_coming_soon')">
+                <i class="fa-solid fa-utensils"></i>
+                <span data-i18n="btn_create_diet">Criar Plano Alimentar</span>
+            </button>
+            
+            <button class="btn" onclick="showNotification('feature_coming_soon')">
+                <i class="fa-solid fa-calculator"></i>
+                <span data-i18n="btn_calculate_imc">Calcular IMC</span>
+            </button>
+            
+            <button class="btn" onclick="showNotification('feature_coming_soon')">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span data-i18n="btn_tips">Ver Dicas de Saúde</span>
+            </button>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-language"></i>
+                <span data-i18n="language_info_title">Suporte Multi-idiomas</span>
+            </div>
+            
+            <div class="info-card">
+                <h3>
+                    <i class="fa-solid fa-globe"></i>
+                    <span data-i18n="available_languages">Idiomas Disponíveis</span>
+                </h3>
+                <p data-i18n="languages_description">
+                    O aplicativo está disponível em 5 idiomas: Português, Inglês, Espanhol, Francês e Alemão. Selecione seu idioma preferido no menu superior.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div class="notification" id="notification"></div>
+
+    <nav class="bottom-nav">
+        <a href="#" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span data-i18n="nav_home">Início</span>
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-apple-whole"></i>
+            <span data-i18n="nav_foods">Alimentos</span>
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span data-i18n="nav_tips">Dicas</span>
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-comments"></i>
+            <span data-i18n="nav_chat">Chat</span>
+        </a>
+        <a href="#">
+            <i class="fa-solid fa-user"></i>
+            <span data-i18n="nav_profile">Perfil</span>
+        </a>
+    </nav>
+
+    <script src="../java-script/idioma.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Dietas</title>
+    <link rel="stylesheet" href="../css/comparar.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Comparador de Dietas</h1>
+            <p>Compare suas dietas e resultados com outros usuários</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Formulário de Cadastro -->
+            <section class="form-section">
+                <h2>Cadastrar Nova Dieta</h2>
+                <form id="dietForm">
+                    <div class="form-group">
+                        <label for="userName">Nome do Usuário:</label>
+                        <input type="text" id="userName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dietType">Tipo de Dieta:</label>
+                        <select id="dietType" required>
+                            <option value="">Selecione...</option>
+                            <option value="low-carb">Low Carb</option>
+                            <option value="cetogenica">Cetogênica</option>
+                            <option value="mediterranea">Mediterrânea</option>
+                            <option value="vegetariana">Vegetariana</option>
+                            <option value="vegana">Vegana</option>
+                            <option value="jejum">Jejum Intermitente</option>
+                            <option value="paleo">Paleo</option>
+                            <option value="dash">DASH</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startWeight">Peso Inicial (kg):</label>
+                            <input type="number" id="startWeight" step="0.1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentWeight">Peso Atual (kg):</label>
+                            <input type="number" id="currentWeight" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="duration">Duração (dias):</label>
+                            <input type="number" id="duration" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="satisfaction">Satisfação (1-10):</label>
+                            <input type="number" id="satisfaction" min="1" max="10" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">Observações:</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Adicionar Dieta</button>
+                </form>
+            </section>
+
+            <!-- Lista de Dietas -->
+            <section class="results-section">
+                <h2>Dietas Cadastradas</h2>
+                
+                <div class="filter-section">
+                    <label for="filterDiet">Filtrar por tipo:</label>
+                    <select id="filterDiet">
+                        <option value="all">Todas</option>
+                        <option value="low-carb">Low Carb</option>
+                        <option value="cetogenica">Cetogênica</option>
+                        <option value="mediterranea">Mediterrânea</option>
+                        <option value="vegetariana">Vegetariana</option>
+                        <option value="vegana">Vegana</option>
+                        <option value="jejum">Jejum Intermitente</option>
+                        <option value="paleo">Paleo</option>
+                        <option value="dash">DASH</option>
+                    </select>
+
+                    <button id="sortBtn" class="btn-sort">Ordenar por Resultado</button>
+                </div>
+
+                <div id="dietsList" class="diets-list">
+                    <p class="empty-message">Nenhuma dieta cadastrada ainda.</p>
+                </div>
+            </section>
+
+            <!-- Estatísticas -->
+            <section class="stats-section">
+                <h2>Estatísticas Gerais</h2>
+                <div id="statistics" class="statistics-grid">
+                    <div class="stat-card">
+                        <h3>Total de Usuários</h3>
+                        <p class="stat-value" id="totalUsers">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Perda Média de Peso</h3>
+                        <p class="stat-value" id="avgWeightLoss">0 kg</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Dieta Mais Popular</h3>
+                        <p class="stat-value" id="popularDiet">-</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Satisfação Média</h3>
+                        <p class="stat-value" id="avgSatisfaction">0</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="../java-script/idioma.js"></script>
+</body>
+</html>

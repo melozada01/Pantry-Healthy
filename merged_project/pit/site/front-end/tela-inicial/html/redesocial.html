@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compartilhar nas Redes Sociais</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/redesocial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-bar">
+        <h2>Redes Sociais</h2>
+    </header>
+
+    <main class="content">
+        <!-- Estatísticas para compartilhar -->
+        <div class="section">
+            <h2>📊 Suas Conquistas</h2>
+            <div class="achievement-card" id="achievementCard">
+                <div class="achievement-icon">🏆</div>
+                <h3 id="achievementTitle">Minha Jornada Saudável</h3>
+                <div class="achievement-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalMealsShare">0</span>
+                        <span class="stat-text">Refeições</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalActivitiesShare">0</span>
+                        <span class="stat-text">Atividades</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="caloriesBalance">0</span>
+                        <span class="stat-text">Cal. Balance</span>
+                    </div>
+                </div>
+                <p class="achievement-date" id="achievementDate"></p>
+            </div>
+        </div>
+
+        <!-- Opções de compartilhamento -->
+        <div class="section">
+            <h2>🔗 Compartilhar em</h2>
+            
+            <div class="social-buttons">
+                <button class="social-btn facebook" onclick="shareToFacebook()">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </button>
+
+                <button class="social-btn twitter" onclick="shareToTwitter()">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter / X</span>
+                </button>
+
+                <button class="social-btn instagram" onclick="shareToInstagram()">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </button>
+
+                <button class="social-btn whatsapp" onclick="shareToWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </button>
+
+                <button class="social-btn telegram" onclick="shareToTelegram()">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </button>
+
+                <button class="social-btn linkedin" onclick="shareToLinkedIn()">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Compartilhamento nativo -->
+        <div class="section">
+            <h2>📱 Compartilhar</h2>
+            <button class="btn btn-primary" onclick="nativeShare()">
+                <i class="fas fa-share-alt"></i> Compartilhar (Nativo)
+            </button>
+        </div>
+
+        <!-- Copiar link -->
+        <div class="section">
+            <h2>🔗 Link Direto</h2>
+            <div class="copy-link-container">
+                <input type="text" id="shareLink" class="input" readonly value="https://pantry-healthy.app/share/123456">
+                <button class="btn" onclick="copyLink()">
+                    <i class="fas fa-copy"></i> Copiar
+                </button>
+            </div>
+        </div>
+
+        <!-- Histórico de compartilhamentos -->
+        <div class="section">
+            <h2>📜 Últimos Compartilhamentos</h2>
+            <div id="shareHistory"></div>
+        </div>
+
+        <!-- Conectar contas -->
+        <div class="section">
+            <h2>🔐 Contas Conectadas</h2>
+            <div class="connected-accounts">
+                <div class="account-item">
+                    <i class="fab fa-facebook-f" style="color: #1877f2;"></i>
+                    <span>Facebook</span>
+                    <button class="btn-connect" id="fbConnect" onclick="connectFacebook()">Conectar</button>
+                </div>
+                <div class="account-item">
+                    <i class="fab fa-twitter" style="color: #1da1f2;"></i>
+                    <span>Twitter</span>
+                    <button class="btn-connect" id="twConnect" onclick="connectTwitter()">Conectar</button>
+                </div>
+                <div class="account-item">
+                    <i class="fab fa-instagram" style="color: #e4405f;"></i>
+                    <span>Instagram</span>
+                    <button class="btn-connect" id="igConnect" onclick="connectInstagram()">Conectar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personalizar mensagem -->
+        <div class="section">
+            <h2>✏️ Personalizar Mensagem</h2>
+            <textarea id="customMessage" class="input textarea" rows="4" placeholder="Escreva uma mensagem personalizada...">Estou cuidando da minha saúde com o Pantry Healthy! 💪🥗</textarea>
+            <button class="btn" onclick="saveCustomMessage()">Salvar Mensagem</button>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="tela-inicial.html"><i class="fa-solid fa-house"></i></a>
+        <a href="alimentos.html"><i class="fa-solid fa-apple-whole"></i></a>
+        <a href="dicas.html"><i class="fa-solid fa-lightbulb"></i></a>
+        <a href="chat.html"><i class="fa-solid fa-comments"></i></a>
+        <a href="notificacoes.html"><i class="fa-solid fa-bell"></i></a>
+        <a href="perfil.html" class="active"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <script src="../java-script/redesocial.js"></script>
+</body>
+</html>

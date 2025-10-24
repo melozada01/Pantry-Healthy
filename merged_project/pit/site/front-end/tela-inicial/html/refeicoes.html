@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde & Bem-estar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Saúde & Bem-estar</h1>
+
+        <!-- Abas de Navegação -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="notifications">🔔 Notificações</button>
+            <button class="tab-btn" data-tab="history">📊 Histórico</button>
+        </div>
+
+        <!-- ABA DE NOTIFICAÇÕES -->
+        <div class="tab-content active" id="notifications">
+            <div class="section">
+                <h2><span class="icon">🍽️</span> Horários de Refeição</h2>
+                <div class="time-input">
+                    <input type="time" id="mealTime" value="12:00">
+                    <button class="btn-add" id="addMealBtn">Adicionar</button>
+                </div>
+                <div class="reminder-list" id="mealList"></div>
+            </div>
+
+            <div class="section">
+                <h2><span class="icon">💧</span> Lembrete de Água</h2>
+                <div class="water-interval">
+                    <label>A cada</label>
+                    <input type="number" id="waterInterval" value="60" min="15" max="240">
+                    <label>minutos</label>
+                </div>
+                <div class="reminder-list" id="waterStatus" style="margin-top: 15px;"></div>
+            </div>
+
+            <button class="btn-enable" id="enableBtn">
+                Ativar Notificações
+            </button>
+
+            <div class="status inactive" id="status">
+                Notificações desativadas
+            </div>
+        </div>
+
+        <!-- ABA DE HISTÓRICO -->
+        <div class="tab-content" id="history">
+            <!-- Formulário de Refeição -->
+            <div class="section">
+                <h2>🍽️ Registrar Refeição</h2>
+                <div class="form-group">
+                    <input type="text" id="mealName" placeholder="Nome da refeição (ex: Almoço)">
+                    <input type="text" id="mealDescription" placeholder="O que você comeu?">
+                    <input type="number" id="mealCalories" placeholder="Calorias (opcional)" min="0">
+                    <input type="datetime-local" id="mealDateTime">
+                    <button class="btn-primary" id="addMealHistoryBtn">Adicionar Refeição</button>
+                </div>
+            </div>
+
+            <!-- Formulário de Atividade Física -->
+            <div class="section">
+                <h2>💪 Registrar Atividade Física</h2>
+                <div class="form-group">
+                    <select id="activityType">
+                        <option value="">Selecione o tipo</option>
+                        <option value="Caminhada">Caminhada</option>
+                        <option value="Corrida">Corrida</option>
+                        <option value="Musculação">Musculação</option>
+                        <option value="Natação">Natação</option>
+                        <option value="Ciclismo">Ciclismo</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Dança">Dança</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <input type="number" id="activityDuration" placeholder="Duração (minutos)" min="1">
+                    <input type="number" id="activityCalories" placeholder="Calorias queimadas (opcional)" min="0">
+                    <input type="datetime-local" id="activityDateTime">
+                    <button class="btn-primary" id="addActivityBtn">Adicionar Atividade</button>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="meals">Refeições</button>
+                <button class="filter-btn" data-filter="activities">Atividades</button>
+                <button class="filter-btn" data-filter="today">Hoje</button>
+                <button class="filter-btn" data-filter="week">Esta Semana</button>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalMeals">0</div>
+                    <div class="stat-label">Refeições</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalActivities">0</div>
+                    <div class="stat-label">Atividades</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalCaloriesIn">0</div>
+                    <div class="stat-label">Calorias Consumidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalCaloriesOut">0</div>
+                    <div class="stat-label">Calorias Queimadas</div>
+                </div>
+            </div>
+
+            <!-- Lista de Histórico -->
+            <div class="section">
+                <h2>📅 Histórico</h2>
+                <div id="historyList"></div>
+            </div>
+
+            <button class="btn-danger" id="clearBtn">Limpar Todo Histórico</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

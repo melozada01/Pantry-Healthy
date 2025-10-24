@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="stylesheet" href="../css/configuracao.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="theme-dark">
+    <header class="top-bar">
+        <h2>Configurações</h2>
+    </header>
+
+    <main class="content">
+        <!-- Seção de Personalização -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-palette"></i>
+                Personalização da Interface
+            </div>
+
+            <!-- Temas -->
+            <div style="margin-bottom: 25px;">
+                <h3 style="font-size: 15px; margin-bottom: 15px; color: #8696a0;">Temas</h3>
+                
+                <div class="theme-option active" data-theme="dark">
+                    <div class="theme-info">
+                        <div class="theme-preview">
+                            <div class="color" style="background: #0b141a;"></div>
+                            <div class="color" style="background: #25d366;"></div>
+                        </div>
+                        <div class="theme-details">
+                            <h3>Escuro</h3>
+                            <p>Tema padrão do WhatsApp</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+
+                <div class="theme-option" data-theme="light">
+                    <div class="theme-info">
+                        <div class="theme-preview">
+                            <div class="color" style="background: #f0f2f5;"></div>
+                            <div class="color" style="background: #00a884;"></div>
+                        </div>
+                        <div class="theme-details">
+                            <h3>Claro</h3>
+                            <p>Tema claro e suave</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+
+                <div class="theme-option" data-theme="blue">
+                    <div class="theme-info">
+                        <div class="theme-preview">
+                            <div class="color" style="background: #0a1929;"></div>
+                            <div class="color" style="background: #0088cc;"></div>
+                        </div>
+                        <div class="theme-details">
+                            <h3>Azul</h3>
+                            <p>Tema azul oceano</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+
+                <div class="theme-option" data-theme="purple">
+                    <div class="theme-info">
+                        <div class="theme-preview">
+                            <div class="color" style="background: #1a0a1f;"></div>
+                            <div class="color" style="background: #9c27b0;"></div>
+                        </div>
+                        <div class="theme-details">
+                            <h3>Roxo</h3>
+                            <p>Tema roxo elegante</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+
+                <div class="theme-option" data-theme="green">
+                    <div class="theme-info">
+                        <div class="theme-preview">
+                            <div class="color" style="background: #0a1f0f;"></div>
+                            <div class="color" style="background: #4caf50;"></div>
+                        </div>
+                        <div class="theme-details">
+                            <h3>Verde Natural</h3>
+                            <p>Tema verde natureza</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-check check-icon"></i>
+                </div>
+            </div>
+
+            <!-- Tamanho da Fonte -->
+            <div class="slider-control">
+                <div class="slider-header">
+                    <span class="slider-label">Tamanho da Fonte</span>
+                    <span class="slider-value" id="fontSizeValue">16px</span>
+                </div>
+                <input type="range" id="fontSizeSlider" min="12" max="20" value="16" step="1">
+            </div>
+
+            <!-- Preview -->
+            <div class="preview-box">
+                <p class="preview-text" id="previewText">
+                    Esta é uma prévia do texto com o tamanho selecionado. Você pode ajustar conforme sua preferência.
+                </p>
+                <button class="preview-button">Botão de Exemplo</button>
+            </div>
+        </div>
+
+        <!-- Seção de Outras Configurações -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fa-solid fa-gear"></i>
+                Configurações Gerais
+            </div>
+
+            <button class="btn" onclick="openModal()">
+                <span><i class="fa-solid fa-key"></i> Alterar Senha</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <button class="btn" onclick="toggleNotifications()">
+                <span><i class="fa-solid fa-bell"></i> Notificações</span>
+                <div class="toggle-switch" id="notificationToggle"></div>
+            </button>
+
+            <button class="btn" onclick="confirmLogout()">
+                <span><i class="fa-solid fa-right-from-bracket"></i> Sair</span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- Modal de Exemplo -->
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa-solid fa-key" style="color: var(--primary-color);"></i>
+                <h3>Alterar Senha</h3>
+            </div>
+            <p style="color: #8696a0; text-align: center; margin-bottom: 20px;">
+                Funcionalidade em desenvolvimento
+            </p>
+            <div class="modal-buttons">
+                <button class="modal-btn secondary" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="tela-inicial.html"><i class="fa-solid fa-house"></i></a>
+        <a href="alimentos.html"><i class="fa-solid fa-apple-whole"></i></a>
+        <a href="dicas.html"><i class="fa-solid fa-lightbulb"></i></a>
+        <a href="chat.html"><i class="fa-solid fa-comments"></i></a>
+        <a href="notificacoes.html"><i class="fa-solid fa-bell"></i></a>
+        <a href="perfil.html" class="active"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <script src="../java-script/configuracao.js"></script>
+</body>
+</html>

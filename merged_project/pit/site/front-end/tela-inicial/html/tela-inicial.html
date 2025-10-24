@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/tela-inical.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="user-info">
+            <img src="../../imagens/PanteraGrafico.png" class="avatar" alt="Avatar">
+            <div>
+                <h2>Gabriel Mota</h2>
+                <p>Quero emagrecer</p>
+                <a href="../html/redesocial.html" class="redessociais fa-solid fa-insta">Redes Sociais</a>
+            </div>
+
+            <div>
+                <a href="../html/comparar.html" class="comparar fa-solid fa-insta">Comparar Dieta</a>
+            </div>
+        </div>
+        <button class="qr-btn"><i class="fa-solid fa-qrcode"></i></button>
+    </header>
+
+    <main class="dashboard">
+        <section class="stats">
+            <div class="weights">
+                <p><strong>80KG</strong> Peso Inicial</p>
+                <p><strong>68KG</strong> Peso Atual</p>
+                <p><strong>70KG</strong> Meta de Peso</p>
+            </div>
+            <canvas id="weightChart" width="400" height="200"></canvas>
+            <div class="imc-info">
+              
+            </div>
+
+            <a href="https://www.instagram.com/gabrielmotavr">teste</a>
+
+            <div class="imc-calc">
+    <h3>Calculadora de IMC e Calorias</h3>
+    <input type="number" id="peso" placeholder="Peso (kg)">
+    <input type="number" id="altura" placeholder="Altura (m)" step="0.01">
+    <input type="number" id="idade" placeholder="Idade (anos)">
+    
+    <select id="sexo">
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+    </select>
+
+    <select id="atividade">
+        <option value="1.2">Sedentário</option>
+        <option value="1.375">Leve (1-3x/semana)</option>
+        <option value="1.55">Moderado (3-5x/semana)</option>
+        <option value="1.725">Ativo (6-7x/semana)</option>
+        <option value="1.9">Muito Ativo (atleta)</option>
+    </select>
+
+    <button onclick="calcularSaude()">Calcular</button>
+    <p id="resultadoIMC"></p>
+    <p id="resultadoCalorias"></p>
+</div>
+
+<script>
+function calcularSaude() {
+    const peso = parseFloat(document.getElementById("peso").value);
+    const altura = parseFloat(document.getElementById("altura").value);
+    const idade = parseInt(document.getElementById("idade").value);
+    const sexo = document.getElementById("sexo").value;
+    const atividade = parseFloat(document.getElementById("atividade").value);
+
+    if (!peso || !altura || !idade) {
+        document.getElementById("resultadoIMC").innerText = "Preencha todos os campos!";
+        return;
+    }
+
+    // 🔹 Cálculo IMC
+    const imc = (peso / (altura * altura)).toFixed(2);
+    let classificacao = "";
+    if (imc < 18.5) classificacao = "Abaixo do peso";
+    else if (imc < 24.9) classificacao = "Peso normal";
+    else if (imc < 29.9) classificacao = "Sobrepeso";
+    else if (imc < 34.9) classificacao = "Obesidade grau 1";
+    else if (imc < 39.9) classificacao = "Obesidade grau 2";
+    else classificacao = "Obesidade grau 3";
+
+    document.getElementById("resultadoIMC").innerHTML = 
+        `Seu IMC é <strong>${imc}</strong> (${classificacao})`;
+
+    // 🔹 Cálculo TMB
+    const alturaCm = altura * 100;
+    let tmb = 0;
+    if (sexo === "masculino") {
+        tmb = (10 * peso) + (6.25 * alturaCm) - (5 * idade) + 5;
+    } else {
+        tmb = (10 * peso) + (6.25 * alturaCm) - (5 * idade) - 161;
+    }
+
+    // 🔹 Cálculo Calorias Diárias
+    const calorias = Math.round(tmb * atividade);
+
+    document.getElementById("resultadoCalorias").innerHTML = 
+        `Você precisa de aproximadamente <strong>${calorias} kcal/dia</strong> para manter seu peso.`;
+}
+</script>
+
+            <div class="botoes">
+                <button class="btn pdf-btn" id="exportPDF">📄 PDF</button>
+                <button class="btn plan-btn" onclick="window.location.href='pagamento.html'">Plano Pago</button>
+            </div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i></a>
+        <a href="alimentos.html"><i class="fa-solid fa-apple-whole"></i></a>
+        <a href="dicas.html"><i class="fa-solid fa-lightbulb"></i></a>
+        <a href="chat.html"><i class="fa-solid fa-comments"></i></a>
+        <a href="notificacoes.html"><i class="fa-solid fa-bell"></i></a>
+        <a href="perfil.html"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <script>
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById("peso").value);
+            const altura = parseFloat(document.getElementById("altura").value);
+
+            if (!peso || !altura || altura <= 0) {
+                document.getElementById("resultadoIMC").innerText = "Digite valores válidos!";
+                return;
+            }
+
+            const imc = (peso / (altura * altura)).toFixed(2);
+            let classificacao = "";
+
+            if (imc < 18.5) classificacao = "Abaixo do peso";
+            else if (imc < 24.9) classificacao = "Peso normal";
+            else if (imc < 29.9) classificacao = "Sobrepeso";
+            else if (imc < 34.9) classificacao = "Obesidade grau 1";
+            else if (imc < 39.9) classificacao = "Obesidade grau 2";
+            else classificacao = "Obesidade grau 3";
+
+            document.getElementById("resultadoIMC").innerHTML = 
+                `Seu IMC é <strong>${imc}</strong> (${classificacao})`;
+        }
+    </script>
+    <script src="../java-script/tela-inicial.js"></script>
+</body>
+</html>

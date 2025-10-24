@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentos & Histórico</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-bar">
+        <h2>Alimentos & Histórico</h2>
+        <div class="header-info">
+            <span id="currentDate"></span>
+            <span class="calories-badge">
+                <strong>Calorias Hoje:</strong> <span id="todayCalories">0</span> / <span id="dailyGoal">2000</span> kcal
+            </span>
+        </div>
+    </header>
+
+    <main class="content">
+        <!-- Abas de Navegação -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="alimentos">🍎 Alimentos</button>
+            <button class="tab-btn" data-tab="historico">📊 Histórico</button>
+        </div>
+
+        <!-- ABA DE ALIMENTOS -->
+        <div class="tab-content active" id="alimentos">
+            <input type="text" id="searchFood" placeholder="Buscar alimento..." class="input">
+            <button class="btn" id="addFoodBtn">Adicionar</button>
+            <div class="list">
+                <p>🥗 Salada - 50 kcal</p>
+                <p>🍗 Frango grelhado - 150 kcal</p>
+                <p>🍎 Maçã - 70 kcal</p>
+            </div>
+        </div>
+
+        <!-- ABA DE HISTÓRICO -->
+        <div class="tab-content" id="historico">
+            <!-- Formulário de Refeição Completo -->
+            <div class="section">
+                <h2>🍽️ Registrar Refeição Completa</h2>
+                <div class="form-group">
+                    <input type="date" id="mealDate" class="input">
+                    <input type="time" id="mealTime" class="input">
+                    
+                    <select id="mealType" class="input">
+                        <option value="">Tipo de Refeição</option>
+                        <option value="cafe">Café da Manhã</option>
+                        <option value="lanche-manha">Lanche da Manhã</option>
+                        <option value="almoco">Almoço</option>
+                        <option value="lanche-tarde">Lanche da Tarde</option>
+                        <option value="jantar">Jantar</option>
+                        <option value="ceia">Ceia</option>
+                    </select>
+                    
+                    <input type="text" id="foodName" placeholder="Nome do Alimento" class="input">
+                    
+                    <div class="input-row">
+                        <input type="number" id="quantity" placeholder="Quantidade" step="0.1" class="input">
+                        <select id="unit" class="input">
+                            <option value="g">gramas (g)</option>
+                            <option value="ml">mililitros (ml)</option>
+                            <option value="un">unidade</option>
+                            <option value="colher">colher</option>
+                            <option value="xicara">xícara</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-row">
+                        <input type="number" id="calories" placeholder="Calorias (kcal)" step="0.1" class="input">
+                        <input type="number" id="protein" placeholder="Proteínas (g)" step="0.1" class="input">
+                    </div>
+                    
+                    <div class="input-row">
+                        <input type="number" id="carbs" placeholder="Carboidratos (g)" step="0.1" class="input">
+                        <input type="number" id="fats" placeholder="Gorduras (g)" step="0.1" class="input">
+                    </div>
+                    
+                    <textarea id="mealNotes" placeholder="Observações (opcional)" rows="2" class="input"></textarea>
+                    
+                    <button class="btn" id="addCompleteMealBtn">➕ Adicionar Refeição</button>
+                </div>
+            </div>
+
+            <!-- Meta Diária -->
+            <div class="section">
+                <h3>🎯 Configurar Meta Diária de Calorias</h3>
+                <div class="input-row">
+                    <input type="number" id="dailyGoalInput" placeholder="Meta diária (kcal)" class="input">
+                    <button class="btn" id="setGoalBtn">Definir Meta</button>
+                </div>
+            </div>
+
+            <!-- Formulário de Atividade Física -->
+            <div class="section">
+                <h2>💪 Registrar Atividade Física</h2>
+                <div class="form-group">
+                    <select id="activityType" class="input">
+                        <option value="">Selecione o tipo</option>
+                        <option value="Caminhada">Caminhada</option>
+                        <option value="Corrida">Corrida</option>
+                        <option value="Musculação">Musculação</option>
+                        <option value="Natação">Natação</option>
+                        <option value="Ciclismo">Ciclismo</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Dança">Dança</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                    <input type="number" id="activityDuration" placeholder="Duração (minutos)" min="1" class="input">
+                    <input type="number" id="activityCalories" placeholder="Calorias queimadas (opcional)" min="0" class="input">
+                    <input type="datetime-local" id="activityDateTime" class="input">
+                    <button class="btn" id="addActivityBtn">Adicionar Atividade</button>
+                </div>
+            </div>
+
+            <!-- Resumo Nutricional de Hoje -->
+            <div class="section nutrition-summary">
+                <h2>📊 Resumo Nutricional de Hoje</h2>
+                <div class="nutrition-grid">
+                    <div class="nutrition-card">
+                        <div class="nutrition-icon">🔥</div>
+                        <div class="nutrition-info">
+                            <span class="nutrition-label">Calorias</span>
+                            <span class="nutrition-value" id="summaryCalories">0</span>
+                            <span class="nutrition-unit">kcal</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="caloriesProgress"></div>
+                        </div>
+                    </div>
+
+                    <div class="nutrition-card">
+                        <div class="nutrition-icon">🥩</div>
+                        <div class="nutrition-info">
+                            <span class="nutrition-label">Proteínas</span>
+                            <span class="nutrition-value" id="summaryProtein">0</span>
+                            <span class="nutrition-unit">g</span>
+                        </div>
+                    </div>
+
+                    <div class="nutrition-card">
+                        <div class="nutrition-icon">🍞</div>
+                        <div class="nutrition-info">
+                            <span class="nutrition-label">Carboidratos</span>
+                            <span class="nutrition-value" id="summaryCarbs">0</span>
+                            <span class="nutrition-unit">g</span>
+                        </div>
+                    </div>
+
+                    <div class="nutrition-card">
+                        <div class="nutrition-icon">🥑</div>
+                        <div class="nutrition-info">
+                            <span class="nutrition-label">Gorduras</span>
+                            <span class="nutrition-value" id="summaryFats">0</span>
+                            <span class="nutrition-unit">g</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="meals">Refeições</button>
+                <button class="filter-btn" data-filter="activities">Atividades</button>
+                <button class="filter-btn" data-filter="today">Hoje</button>
+                <button class="filter-btn" data-filter="week">Esta Semana</button>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalMeals">0</div>
+                    <div class="stat-label">Refeições</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalActivities">0</div>
+                    <div class="stat-label">Atividades</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalCaloriesIn">0</div>
+                    <div class="stat-label">Cal. Consumidas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="totalCaloriesOut">0</div>
+                    <div class="stat-label">Cal. Queimadas</div>
+                </div>
+            </div>
+
+            <!-- Lista de Histórico -->
+            <div class="section">
+                <h2>📅 Histórico Detalhado</h2>
+                <div id="historyList"></div>
+            </div>
+
+            <button class="btn btn-danger" id="clearBtn">Limpar Todo Histórico</button>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="tela-inicial.html"><i class="fa-solid fa-house"></i></a>
+        <a href="alimentos.html" class="active"><i class="fa-solid fa-apple-whole"></i></a>
+        <a href="dicas.html"><i class="fa-solid fa-lightbulb"></i></a>
+        <a href="chat.html"><i class="fa-solid fa-comments"></i></a>
+        <a href="notificacoes.html"><i class="fa-solid fa-bell"></i></a>
+        <a href="perfil.html"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <script src="../java-script/alimentos.js"></script>
+</body>
+</html>
