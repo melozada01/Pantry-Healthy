@@ -29,6 +29,20 @@ O sistema deve permitir que o usuário informe restrição alimentar para ajusta
 
 O sistema deve enviar notificações de lembretes [x]
 
+O usuário deve conseguir visualizar um histórico de refeições e atividades físicas [x]
+
+O sistema deve permitir integração com redes sociais [x]
+
+O usuário deve poder personalizar as configurações da interface.[x]
+
+O bot deve ser capaz de: 
+Enviar lembretes de refeições e atividades.
+responder perguntas sobre nutrição.
+Ajudar o usuário com a dieta [x]
+
+Os usuários poderão comparar suas dietas e comparar seus resultados. [x]
+
+O sistema deve oferecer suporte a múltiplos idiomas {x]
 
 # Como rodar o projeto:
 Passo 1- clicar no botão começar e fazer seu cadastro 
