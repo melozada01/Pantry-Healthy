@@ -44,6 +44,10 @@ Os usuários poderão comparar suas dietas e comparar seus resultados. [x]
 
 O sistema deve oferecer suporte a múltiplos idiomas {x]
 
+O sistema deve oferecer um chat no Whatsapp com um bot para fazer a dieta [x]
+
+O sistema pode oferecer uma seção de dicas sobre nutrição e saúde [x]
+
 # Como rodar o projeto:
 Passo 1- clicar no botão começar e fazer seu cadastro 
 
