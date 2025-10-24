@@ -48,6 +48,8 @@ O sistema deve oferecer um chat no Whatsapp com um bot para fazer a dieta [x]
 
 O sistema pode oferecer uma seção de dicas sobre nutrição e saúde [x]
 
+O sistema deve permitir que o usuário registre suas refeições [x]
+
 # Como rodar o projeto:
 Passo 1- clicar no botão começar e fazer seu cadastro 
 
